@@ -59,7 +59,8 @@ def fit_and_plot(x, y, classifications):
             start_idx = i + 1  # update start for next segment, note [i+1] is the closest idx with different classification
     
     # handle the last edge manullay here
-    if start_idx < len(x):  # lex(x) <- number of data points
+    n=len(x) # lex(x) <- number of data points
+    if start_idx < n: 
         segment_x = x[start_idx:n]
         segment_y = y[start_idx:n]
         lagrange_poly = lagrange_interpolation(segment_x, segment_y)

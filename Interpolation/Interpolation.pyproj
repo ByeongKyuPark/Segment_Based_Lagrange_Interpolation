@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>84f52d87-2153-4179-b99d-e0e666fdcbf8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>chunk_based_best_fitting.py</StartupFile>
+    <StartupFile>chunk_based_lagrange.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,9 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="chunk_based_lagrange.py" />
     <Compile Include="Interpolation.py" />
     <Compile Include="arc_types.py" />
-    <Compile Include="chunk_based_best_fitting.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.11" />
