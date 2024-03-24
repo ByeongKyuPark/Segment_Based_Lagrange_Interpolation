@@ -1,4 +1,4 @@
-# MAT357 Proj-2 : interpolation byeonggyu.park
+# own interpolation method - byeonggyu.park
 
 import numpy as np
 import matplotlib.pyplot as plt
