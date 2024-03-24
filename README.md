@@ -1,21 +1,26 @@
-# EfficientArcInterpolation
+# SegmentBasedLagrangeInterpolation
 
-This repository documents the development of an efficient interpolation method designed to connect data points using piecewise arcs. This new method stands out for its simplicity and computational efficiency, making it particularly well-suited for large datasets.
+This repository outlines the development of a novel interpolation method that segments data based on trend changes and applies Lagrange polynomial interpolation within each segment. This approach is crafted for its mathematical intuitiveness and computational efficiency, making it highly suitable for large datasets.
 
 ## Overview
 
-The Efficient Arc Interpolation method introduces a novel approach to data visualization and analysis. Unlike traditional interpolation techniques that rely on complex mathematical models and derivative information, this method simplifies the curve-fitting process. It employs a strategy that adjusts the curvature of arcs between data points based on the slopes' relative changes, enabling a quick and intuitive representation of data trends.
+The Segment-Based Lagrange Interpolation method refines traditional interpolation techniques by segmenting data according to slope changes before applying interpolation. This methodology circumvents the complexities and derivative dependencies of conventional methods, streamlining the process of fitting curves to data. It's particularly adept at capturing data trends accurately, offering a viable solution to common interpolation challenges.
 
 ## Key Features
 
-- **Simplicity in Design:** The method utilizes fixed curvature values for connecting data points, reducing the need for complex calculations.
-- **Efficiency for Large Datasets:** With an $O(N)$ computational complexity, it is notably more efficient for analyzing large datasets compared to traditional methods like Lagrange or cubic splines.
-- **No Derivative Data Required:** This interpolation technique does not necessitate derivative data ($y'$, $y''$), streamlining its application to datasets where such information is unavailable or difficult to compute.
+- **Trend-Based Segmentation:** Segments data based on calculated slope changes, ensuring that each segment reflects a distinct data trend for more precise interpolation.
+- **Reduced Computational Complexity:** Despite utilizing Lagrange interpolation within segments, the method maintains $O(N)$ computational complexity, offering efficiency in processing large datasets.
+- **Mitigation of Runge's Phenomenon:** By interpolating over fewer points within each segment, the method aims to lessen the impact of Runge's phenomenon, a common issue with high-degree polynomial interpolations.
 
 ## Results
 
-The repository showcases the method's application across various datasets, demonstrating its capability to model data trends effectively. Each figure within the documentation highlights the interpolated results, clearly marking the given $x, y$ values as blue points on the graphs.
+Illustrated results within this repository demonstrate the method's effectiveness across a variety of datasets. The interpolation not only follows the given $x, y$ values closely (marked as blue points on the graphs) but also smooths over potential data irregularities without overfitting.
 
 ## Challenges and Future Directions
 
-Despite its advantages, the method encounters limitations, such as the potential for inaccuracies when fixed curvature values do not align with the data's inherent trends. The documentation explores these challenges in detail, proposing potential extensions to enhance the method's accuracy and applicability. Future improvements could include dynamic curvature adjustments and the exploration of other geometric shapes for a more nuanced data representation.
+While the method introduces significant improvements over traditional interpolation techniques, it's not without its challenges:
+
+- **Vulnerability to Runge's Phenomenon:** Although segmenting data reduces the number of points for each interpolation, the method can still exhibit sensitivity to Runge's phenomenon under certain conditions.
+- **Order Sensitivity in Differentiation:** The process of identifying trend changes is sensitive to the computation's directional approach, which can affect the segmentation and, subsequently, the interpolation results.
+
+Future enhancements will focus on refining the segmentation logic to further mitigate these challenges, exploring adaptive curvature adjustments for each segment, and considering alternative interpolation techniques within segments for enhanced flexibility and accuracy.
